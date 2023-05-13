@@ -1,0 +1,18 @@
+Một số widget cơ bản
+- Row, Column:
+  + MainAxisAlignment: Vị trí của các item theo chiều ngang trong row từ trên xuống dưới
+  + CrossAxisAlignment: vị trí các item theo chiều dọc trong row từ trái sang phải
+  + MainAxisSize: kích thước min max của cột và hàng
+  + Expanded: chia row colum theo tỉ lệ
+  + Wrap: khi các item chứa hết space item còn lại sẽ đẩy xuống dưới, sd thuộc tính Horizontal, Vertical
+  + Stack và positioned: chia điều các item ra 4 góc màn hình, Positioned(top:0,left:0) trên cùng bên trái
+- MaterialApp
+- Text, Rich Text
+- Image	
+- ElevatedButton
+- TextButton
+- Scaffold
+- Statefull and Stateless
+  + Stateless: widget tĩnh, là bất biến, có dữ liệu và không thể thay đổi được dữ liệu, dữ liệu đua từ client 
+  + Statefull: có state object, hàm setState() tồn tại state object
+  + lifecycle của statefull widget:

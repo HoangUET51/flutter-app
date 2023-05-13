@@ -1,4 +1,7 @@
+import 'package:first_app/gen/assets.gen.dart';
+import 'package:first_app/pages/lading_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 void main() {
   runApp(const MyApp());
@@ -7,47 +10,21 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // TRY THIS: Try running your application with "flutter run". You'll see
-        // the application has a blue toolbar. Then, without quitting the app,
-        // try changing the seedColor in the colorScheme below to Colors.green
-        // and then invoke "hot reload" (save your changes or press the "hot
-        // reload" button in a Flutter-supported IDE, or press "r" if you used
-        // the command line to start the app).
-        //
-        // Notice that the counter didn't reset back to zero; the application
-        // state is not lost during the reload. To reset the state, use hot
-        // restart instead.
-        //
-        // This works for code too, not just values: Most code changes can be
-        // tested with just a hot reload.
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const LadingPage(),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
-
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
   final String title;
 
   @override
@@ -56,26 +33,14 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
-
   void _incrementCounter() {
     setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
       _counter++;
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
@@ -87,27 +52,60 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             const Text(
               'Hello: hoang.vuvan',
-              style: TextStyle(fontSize: 32, fontWeight: FontWeight.w700,color: Colors.lime,backgroundColor: Colors.blueGrey),
+              style: TextStyle(
+                  fontSize: 32,
+                  fontWeight: FontWeight.w700,
+                  color: Colors.lime,
+                  backgroundColor: Colors.blueGrey),
             ),
             Text(
               '$_counter',
               style: Theme.of(context).textTheme.headlineMedium,
             ),
-            const Text.rich(
+            const Text.rich(TextSpan(text: "Hello", children: <TextSpan>[
               TextSpan(
-                text: "Hello",
-                children: <TextSpan>[
-                  TextSpan(text: ' Thea!',style: TextStyle(fontWeight: FontWeight.w700)),
-                  TextSpan(text: ' My name Hoang TB 113')
-                ]
-              )
-            ),
+                  text: ' Thea!',
+                  style: TextStyle(fontWeight: FontWeight.w700)),
+              TextSpan(text: ' My name Hoang TB 113')
+            ])),
             ElevatedButton(onPressed: () {}, child: Text("Hello")),
-            ElevatedButton.icon(onPressed: (){}, icon: Icon(Icons.ac_unit), label: Text("Button Click Here")),
-            TextButton(onPressed: (){
-              print("hello click");
-            }, child: Text('Click me'))
-            // ElevatedButton.icon(onPressed: (){}, icon: "", label: Text("Hello"))
+            ElevatedButton.icon(
+                onPressed: () {},
+                icon: Icon(Icons.ac_unit),
+                label: Text("Button Click Here")),
+            TextButton(
+                onPressed: () {
+                  print("hello click");
+                },
+                child: Text('Click me')),
+            Assets.images.logo.image(
+              width: 100,
+              height: 100,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Expanded(
+                  flex: 1,
+                  child: Container(
+                    color: Colors.black,
+                    child: Text("Trang meo"),
+                  ),
+                ),
+                Container(
+                  width: 100,
+                  height: 100,
+                  color: Color.fromARGB(255, 26, 255, 80),
+                ),
+                Expanded(
+                  flex: 1,
+                  child: Container(
+                    color: Colors.blue,
+                    child: Text("Trang meo"),
+                  ),
+                ),
+              ],
+            )
           ],
         ),
       ),
@@ -117,5 +115,23 @@ class _MyHomePageState extends State<MyHomePage> {
         child: const Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
+  }
+}
+
+class StatefullWidget extends StatefulWidget {
+  const StatefullWidget({super.key});
+
+  @override
+  State<StatefullWidget> createState() => _StatefullWidgetState();
+}
+
+class _StatefullWidgetState extends State<StatefullWidget> {
+  onChange() {
+    setState(() {});
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return const Placeholder();
   }
 }
