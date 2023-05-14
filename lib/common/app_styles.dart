@@ -11,7 +11,7 @@ class AppStyle {
   static TextStyle h2 = TextStyle(
       fontFamily: FontFamily.sen,
       fontSize: 67.77,
-      color: AppColor.titleColor,
+      color: Colors.white,
       fontWeight: FontWeight.w700);
   static TextStyle h3 = TextStyle(
       fontFamily: FontFamily.sen, fontSize: 41.89, color: Colors.white);

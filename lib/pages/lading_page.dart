@@ -23,54 +23,33 @@ class LadingPage extends StatelessWidget {
               ),
             ),
             Expanded(
-              child: Row(children: [
-                Expanded(
-                    flex: 2,
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 17),
-                      child: Container(
-                        alignment: Alignment.topCenter,
-                        child: Text("Engligh", style: AppStyle.h2),
+              child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    Text(
+                      "English",
+                      style: AppStyle.h2.copyWith(
+                          color: AppColor.titleColor,
+                          fontWeight: FontWeight.bold),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(right: 8),
+                      child: Text(
+                        "Qoutes\"",
+                        style: AppStyle.h4.copyWith(height: 0.5),
+                        textAlign: TextAlign.right,
                       ),
-                    )),
-                Expanded(
-                    flex: 1,
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 84),
-                      child: Container(
-                          alignment: Alignment.topLeft,
-                          child: Text(
-                            "Qoutes\"",
-                            style: AppStyle.h4,
-                          )),
-                    ))
-              ]),
+                    )
+                  ]),
             ),
             Expanded(
               child: Padding(
-                padding: const EdgeInsets.symmetric(vertical: 18),
-                child: Container(
-                  alignment: Alignment.topCenter,
-                  child: SizedBox(
-                    width: 76,
-                    height: 76,
-                    child: ElevatedButton(
-                      child: Icon(
-                        AppColor.navigate_next,
-                        size: 35,
-                        color: Color.fromARGB(255, 66, 66, 66),
-                      ),
-                      onPressed: () {
-                        print("xin chao");
-                      },
-                      style: ButtonStyle(
-                          shape:
-                              MaterialStateProperty.all<RoundedRectangleBorder>(
-                                  RoundedRectangleBorder(
-                                      borderRadius:
-                                          BorderRadius.circular(64)))),
-                    ),
-                  ),
+                padding: const EdgeInsets.only(bottom: 64),
+                child: RawMaterialButton(
+                  shape: CircleBorder(),
+                  onPressed: () {},
+                  child: Icon(Icons.access_alarms_outlined),
+                  fillColor: Color.fromARGB(255, 106, 228, 237),
                 ),
               ),
             )
