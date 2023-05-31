@@ -16,3 +16,18 @@ Một số widget cơ bản
   + Stateless: widget tĩnh, là bất biến, có dữ liệu và không thể thay đổi được dữ liệu, dữ liệu đua từ client 
   + Statefull: có state object, hàm setState() tồn tại state object
   + lifecycle của statefull widget:
+
+Syntax trong dart
+ - Khai báo 
+  + var 
+  + final - Không thể gán lại 
+  + const - không thể gán lại, chỉ áp dụng kiểu nguyên thủy
+  + late - khởi tạo trước, định nghĩa kiểu dữ liệu sau
+  + null - String? a // a = null,
+ - Kiểu dữ liệu 
+  + Numbers(int, double);
+  + Record() - kiểu dữ liệu mix nhiều kiểu nguyên thủy, hoặc obj 
+    VD  var record = ('first', a: 2, b: true, 'last'); => printf(record.$1) => first
+  + List<T>
+  + Set<T>
+  + Map<T,T>

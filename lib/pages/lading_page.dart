@@ -1,5 +1,6 @@
 import 'package:first_app/common/app_colors.dart';
 import 'package:first_app/common/app_styles.dart';
+import 'package:first_app/pages/home_page.dart';
 import 'package:flutter/material.dart';
 
 class LadingPage extends StatelessWidget {
@@ -47,9 +48,14 @@ class LadingPage extends StatelessWidget {
                 padding: const EdgeInsets.only(bottom: 64),
                 child: RawMaterialButton(
                   shape: CircleBorder(),
-                  onPressed: () {},
-                  child: Icon(Icons.access_alarms_outlined),
-                  fillColor: Color.fromARGB(255, 106, 228, 237),
+                  onPressed: () {
+                    Navigator.pushAndRemoveUntil(
+                        context,
+                        MaterialPageRoute(builder: (_) => HomePage()),
+                        (route) => false);
+                  },
+                  child: Icon(Icons.arrow_forward_ios ),
+                  fillColor: Color.fromARGB(255, 3, 140, 150),
                 ),
               ),
             )
