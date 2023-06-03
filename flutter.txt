@@ -36,4 +36,6 @@ Syntax trong dart
   + abstract co the extend 
   + interface chi implements
   + Enum
-  + 
+  + Biến public, private
+  VD int public 
+     int _private

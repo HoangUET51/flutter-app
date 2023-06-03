@@ -35,6 +35,34 @@ void main() {
   final a = Color.red.name;
   print(a); // red
   print(color); // [Color.red,Color.green,Color.black]
+
+  User myUser = User(name: "hoang vuvan", photoUrl: "http://efjksdfdjhd");
+
+  User myUser2 = myUser.copyWith(name: myUser.name, photoUrl: "http/////////");
+
+  print(myUser2)
+
+  print(myUser);
+}
+
+class User {
+  final String name;
+  final String photoUrl;
+
+  User({required this.name, required this.photoUrl});
+
+  User copyWith({String? name, String? photoUrl}) {
+    return User(name: name ?? this.name, photoUrl: photoUrl ?? this.photoUrl);
+  }
+
+  String get fullName => '$name hello';
+
+  set name(String value) {
+    name = value;
+  }
+
+  @override
+  String toString() => 'User(name:$name,photoUrl:$photoUrl)';
 }
 
 int sum({required int a, required int b}) {
@@ -86,4 +114,4 @@ class Student1 implements Student {
   }
 }
 
-enum Color { red, green, black };
+enum Color { red, green, black }
